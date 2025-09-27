@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="card shadow p-4">
+    <h3>Results</h3>
+    <p><b>BMR:</b> {{ result.bmr }} kcal/day</p>
+    <p><b>TDEE:</b> {{ result.tdee }} kcal/day</p>
+    <p><b>Recommended Calories:</b> {{ result.calories }} kcal/day</p>
+
+    <h5>Suggested Foods:</h5>
+    <ul>
+        {% for food in result.foods %}
+            <li>{{ food }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('home') }}" class="btn btn-secondary mt-3">Back</a>
+</div>
+{% endblock %}
